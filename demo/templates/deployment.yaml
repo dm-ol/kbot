@@ -21,16 +21,33 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+      - hostPath:
+          path: /dev/mem
+          type: ""
+        name: dev-mem
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Release.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          volumeMounts:
+          - mountPath: /dev/mem
+            name: dev-mem
+          image: "{{ .Values.image.repository }}/{{ .Chart.Name }}:{{ .Values.image.tag }}-{{ .Values.image.arch | default "arm64" }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: {{ .Values.secret.env }}
+            valueFrom:
+              secretKeyRef:
+                key: {{ .Values.secret.key }}
+                name: {{ .Values.secret.name }}
           
