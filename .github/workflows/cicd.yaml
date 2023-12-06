@@ -23,5 +23,5 @@ jobs:
     - name: Build_Push
       env:
         APP: "kbot"
-        REGISTRY: "devdp"
+        REGISTRY: "kbot"
       run: make image push
