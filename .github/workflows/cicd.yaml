@@ -38,7 +38,7 @@ jobs:
      
     - uses: mikefarah/yq@master
       with:
-        cmd: yq -i '.image.tag=strenv(VERSION)' helm/values.yaml
+        cmd: yq -i '.image.tag=strenv(VERSION)' demo/values.yaml
     
     - run: |
         git config user.name github-actions
