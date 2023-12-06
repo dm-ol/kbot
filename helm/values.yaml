@@ -1,4 +1,4 @@
-# Default values for demo.
+# Default values for helm.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -8,9 +8,10 @@ image:
   repository: devdp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.5"
+  tag: "1.0.5-${OS}-${arch}"
   arch: amd64
-  
+  OS: linux
+
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
