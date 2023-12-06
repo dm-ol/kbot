@@ -23,7 +23,7 @@ jobs:
     - name: Build_Push
       env:
         APP: "kbot"
-        REGISTRY: "kbot"
+        REGISTRY: "devdp"
       run: make image push
   cd:
     name: CD
