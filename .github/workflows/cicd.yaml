@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Run test
       run: make test
@@ -18,3 +20,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build_Push
+      env:
+        APP: "kbot"
+        REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+        
