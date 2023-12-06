@@ -24,4 +24,4 @@ jobs:
       env:
         APP: "kbot"
         REGISTRY: "devdp"
-      run: make image push TARGETARCH=$TARGETARCH
+      run: make image push
