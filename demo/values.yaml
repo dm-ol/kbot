@@ -3,14 +3,12 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   repository: devdp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.5"
+  tag: "v1.0.5-27f6f09"
   arch: amd64
-  
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
