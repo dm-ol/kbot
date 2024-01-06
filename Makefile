@@ -30,4 +30,3 @@ push:
 
 clean:
 		rm -rf kbot
-		
