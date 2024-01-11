@@ -18,7 +18,7 @@ spec:
       labels:
         {{- include "helm.labels" . | nindent 8 }}
 	{{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
+          {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
       dnsConfig:
