@@ -7,7 +7,7 @@ image:
   repository: devdp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.5-5c1ed1a"
+  tag: "v1.0.5-024cb65"
   os: linux
   arch: amd64
 secret:
