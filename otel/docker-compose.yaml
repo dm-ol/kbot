@@ -8,7 +8,7 @@ services:
       - METRICS_HOST=collector:4317
       - TELE_TOKEN=${TELE_TOKEN}
 
-  # OTEL contrib collector for Laki
+  # OTEL contrib collector for Loki
   collector:
     image: otel/opentelemetry-collector-contrib:0.78.0
     command: [--config=/etc/otel-collector-config.yaml]
