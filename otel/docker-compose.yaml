@@ -3,7 +3,7 @@ services:
 
   # Kbot
   kbot:
-    image: devdp/kbot:v1.0.0-otel
+    image: devdp/kbot:v1.0.5-otel
     environment:
       - METRICS_HOST=collector:4317
       - TELE_TOKEN=${TELE_TOKEN}
