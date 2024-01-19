@@ -1,7 +1,7 @@
 APP := $(shell basename $(shell git remote get-url origin))
 REGISTRY := devdp
-#VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-VERSION=$(shell git describe --tags --abbrev=0)-otel
+VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
+#VERSION=$(shell git describe --tags --abbrev=0)-otel
 #TARGETOS linux darwin windows
 TARGETOS=linux
 #TARGETARCH amd64 arm64
