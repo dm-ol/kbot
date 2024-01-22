@@ -7,7 +7,7 @@ image:
   repository: devdp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.6-877bf82"
+  tag: "v1.0.6-f1700a5"
   os: linux
   arch: amd64
 secret:
@@ -19,5 +19,5 @@ securityContext:
 metrics_host:
   name: "METRICS_HOST"
   value: "opentelemetry-collector.monitoring.svc.cluster.local:4317"
-podAnnotations: 
+podAnnotations:
   sidecar.opentelemetry.io/inject: "monitoring/opentelemetry-sidecar"
