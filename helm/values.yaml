@@ -18,4 +18,4 @@ securityContext:
   privileged: true
 metrics_host:
   name: "METRICS_HOST"
-  value: "opentelemetry-collector.monitoring.svc.cluster.local:4318"
+  value: "opentelemetry-collector.monitoring.svc.cluster.local:4317"
