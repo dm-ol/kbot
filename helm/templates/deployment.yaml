@@ -13,7 +13,6 @@ spec:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
-        sidecar.opentelemetry.io/inject: "monitoring/opentelemetry-sidecar"
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:

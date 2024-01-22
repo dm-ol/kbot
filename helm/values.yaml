@@ -19,3 +19,5 @@ securityContext:
 metrics_host:
   name: "METRICS_HOST"
   value: "opentelemetry-collector.monitoring.svc.cluster.local:4317"
+podAnnotations: 
+  sidecar.opentelemetry.io/inject: "monitoring/opentelemetry-sidecar"
